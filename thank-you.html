@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - WhatsApp CRM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .thankyou-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 450px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+            color: #25D366;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .thankyou-card h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .thankyou-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .next-steps {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .next-steps li {
+            font-size: 13px;
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        .btn-login {
+            background: #25D366;
+            color: white;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .btn-login:hover {
+            background: #128C7E;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="thankyou-card">
+    <div class="success-icon">
+        <i class="fas fa-check"></i>
+    </div>
+    <h2>Thank You!</h2>
+    <p>Your request has been received successfully.</p>
+    
+    <div class="next-steps">
+        <strong>What happens next:</strong>
+        <ul class="list-unstyled mt-2">
+            <li>✅ We'll create your account within 24 hours</li>
+            <li>✅ Login credentials sent to your email</li>
+            <li>✅ Your 5-day trial starts immediately</li>
+            <li>✅ Full access to all features</li>
+        </ul>
+    </div>
+    
+    <a href="https://softappweber.github.io/wacrmbyds/" class="btn-login">
+        <i class="fab fa-whatsapp"></i> Go to CRM Login
+    </a>
+</div>
+
+</body>
+</html>
