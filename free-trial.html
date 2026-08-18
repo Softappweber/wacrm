@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Free Trial - WhatsApp CRM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #25D366;
+            --primary-dark: #128C7E;
+            --dark: #0f0f1e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .trial-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            max-width: 450px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .trial-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .trial-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .trial-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .trial-body {
+            padding: 30px;
+        }
+        
+        .trial-benefits {
+            background: #f0fff4;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .trial-benefits li {
+            font-size: 13px;
+            padding: 5px 0;
+            color: #333;
+        }
+        
+        .trial-benefits li i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 14px;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-trial {
+            background: var(--primary);
+            color: white;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .btn-trial:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .trial-timer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .trial-timer strong {
+            color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+
+<div class="trial-card">
+    <div class="trial-header">
+        <i class="fab fa-whatsapp" style="font-size: 40px; margin-bottom: 15px;"></i>
+        <h2>Start Your Free Trial</h2>
+        <p>5 Days • No Credit Card Required</p>
+    </div>
+    
+    <div class="trial-body">
+        <div class="trial-benefits">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-check"></i> All 25+ features unlocked</li>
+                <li><i class="fas fa-check"></i> wa.me manual sending</li>
+                <li><i class="fas fa-check"></i> 100 leads storage</li>
+                <li><i class="fas fa-check"></i> Mobile PWA app</li>
+                <li><i class="fas fa-check"></i> Full dashboard access</li>
+            </ul>
+        </div>
+        
+        <form id="trialForm" onsubmit="return false;">
+            <div class="mb-3">
+                <label class="form-label">Full Name *</label>
+                <input type="text" id="trialName" class="form-control" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Email Address *</label>
+                <input type="email" id="trialEmail" class="form-control" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">WhatsApp Number *</label>
+                <input type="tel" id="trialPhone" class="form-control" placeholder="Enter your WhatsApp number" required>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Business Name (optional)</label>
+                <input type="text" id="trialBusiness" class="form-control" placeholder="Your business name">
+            </div>
+            
+            <button type="button" class="btn-trial" onclick="submitTrial()">
+                <i class="fas fa-rocket"></i> Start Free Trial
+            </button>
+        </form>
+        
+        <div class="trial-timer">
+            Your trial starts immediately after signup.<br>
+            <strong>5 days of full access!</strong>
+        </div>
+    </div>
+</div>
+
+<script>
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYTDmfJjMahenio8L4Otud-9Qy_4VBqQMKGFK5nXqmSUjtXuuOssiSMCgUSwpjAF2AQg/exec';
+    
+    async function submitTrial() {
+        const name = document.getElementById('trialName').value.trim();
+        const email = document.getElementById('trialEmail').value.trim();
+        const phone = document.getElementById('trialPhone').value.trim();
+        const business = document.getElementById('trialBusiness').value.trim();
+        
+        if (!name || !email || !phone) {
+            alert('Please fill all required fields');
+            return;
+        }
+        
+        const btn = event.target;
+        btn.textContent = 'Processing...';
+        btn.disabled = true;
+        
+        try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    business: business,
+                    action: 'free_trial_signup'
+                })
+            });
+            
+            alert('✅ Trial request submitted!\n\nWe will create your account and send login credentials to ' + email + ' within 24 hours.');
+            
+            // Reset form
+            document.getElementById('trialForm').reset();
+            btn.textContent = 'Start Free Trial';
+            btn.disabled = false;
+            
+            // Redirect to thank you
+            window.location.href = 'thank-you.html';
+            
+        } catch (error) {
+            alert('Error submitting. Please try again.');
+            btn.textContent = 'Start Free Trial';
+            btn.disabled = false;
+        }
+    }
+</script>
+
+</body>
+</html>
