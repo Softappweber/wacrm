@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-  <title>Buy Now · Free & Easy</title>
+  <title>Pay Now - WhatsApp CRM</title>
   <style>
-    /* ----- RESET & BASE ----- */
     * {
       margin: 0;
       padding: 0;
@@ -19,55 +18,7 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
-      transition: background 0.3s ease, color 0.2s;
-    }
-
-    /* ----- THEME VARIABLES (default: "original" – vibrant) ----- */
-    body {
-      --bg-gradient-start: #667eea;
-      --bg-gradient-end: #764ba2;
-      --card-bg: #ffffff;
-      --card-shadow: 0 20px 60px rgba(0,0,0,0.30);
-      --text-primary: #1e1e2f;
-      --text-secondary: #3b3b5c;
-      --text-muted: #6b6b8a;
-      --border-light: #eaeaef;
-      --input-border: #d0d0dd;
-      --input-focus: #667eea;
-      --btn-gradient-start: #667eea;
-      --btn-gradient-end: #764ba2;
-      --btn-shadow: rgba(102, 126, 234, 0.4);
-      --payment-btn-bg: #2ecc71;
-      --payment-btn-shadow: rgba(46, 204, 113, 0.4);
-      --confirm-btn-bg: #e67e22;
-      --confirm-btn-shadow: rgba(230, 126, 34, 0.4);
-      --upi-bg: #f4f6fc;
-      --upi-border: #667eea;
-      --highlight-bg: #fff9e6;
-      --highlight-border: #ffd700;
-      --status-success-bg: #d4edda;
-      --status-success-text: #155724;
-      --status-error-bg: #f8d7da;
-      --status-error-text: #721c24;
-      --status-info-bg: #d1ecf1;
-      --status-info-text: #0c5460;
-      --order-bg: #fff3cd;
-      --order-border: #ffc107;
-      --order-text: #856404;
-      --divider-color: #d0d0dd;
-      --scrollbar-thumb: #c0c0d0;
-      --qr-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      --btn-disabled-bg: #c0c0ce;
-      --thankyou-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --thankyou-text: #fff;
-      --thankyou-card: rgba(255,255,255,0.15);
-      --thankyou-border: rgba(255,255,255,0.3);
-    }
-
-    /* ----- THEME 1: DARK BLUE ----- */
-    body.theme-darkblue {
-      --bg-gradient-start: #0b1a33;
-      --bg-gradient-end: #1a3a5c;
+      background: linear-gradient(135deg, #0b1a33 0%, #1a3a5c 100%);
       --card-bg: #f0f4fe;
       --card-shadow: 0 20px 60px rgba(0,0,0,0.50);
       --text-primary: #0b1f33;
@@ -106,97 +57,6 @@
       --thankyou-border: rgba(255,255,255,0.2);
     }
 
-    /* ----- THEME 2: LIGHT (soft neutral) ----- */
-    body.theme-light {
-      --bg-gradient-start: #dce3ed;
-      --bg-gradient-end: #c8d2e0;
-      --card-bg: #ffffff;
-      --card-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      --text-primary: #222233;
-      --text-secondary: #3a3a52;
-      --text-muted: #6a6a82;
-      --border-light: #d8dce6;
-      --input-border: #c8cedb;
-      --input-focus: #5a7a9a;
-      --btn-gradient-start: #5a7a9a;
-      --btn-gradient-end: #3a5a7a;
-      --btn-shadow: rgba(70, 100, 140, 0.25);
-      --payment-btn-bg: #3a9a7a;
-      --payment-btn-shadow: rgba(50, 140, 100, 0.25);
-      --confirm-btn-bg: #c07a3a;
-      --confirm-btn-shadow: rgba(180, 110, 40, 0.25);
-      --upi-bg: #f2f5fa;
-      --upi-border: #5a7a9a;
-      --highlight-bg: #f5f7fc;
-      --highlight-border: #b0c4da;
-      --status-success-bg: #d4e8da;
-      --status-success-text: #1a4a3a;
-      --status-error-bg: #f0d8d4;
-      --status-error-text: #6a3a2a;
-      --status-info-bg: #d4e4f0;
-      --status-info-text: #1a3a5a;
-      --order-bg: #e8edf5;
-      --order-border: #a0b8d0;
-      --order-text: #2a4a6a;
-      --divider-color: #c8d0dc;
-      --scrollbar-thumb: #b0bcca;
-      --qr-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      --btn-disabled-bg: #b8c4d4;
-      --thankyou-bg: linear-gradient(135deg, #dce3ed 0%, #c8d2e0 100%);
-      --thankyou-text: #1a2a3a;
-      --thankyou-card: rgba(255,255,255,0.5);
-      --thankyou-border: rgba(255,255,255,0.6);
-    }
-
-    /* ----- THEME 4: ORIGINAL (vibrant) – default ----- */
-    body.theme-original {
-      --bg-gradient-start: #667eea;
-      --bg-gradient-end: #764ba2;
-      --card-bg: #ffffff;
-      --card-shadow: 0 20px 60px rgba(0,0,0,0.30);
-      --text-primary: #1e1e2f;
-      --text-secondary: #3b3b5c;
-      --text-muted: #6b6b8a;
-      --border-light: #eaeaef;
-      --input-border: #d0d0dd;
-      --input-focus: #667eea;
-      --btn-gradient-start: #667eea;
-      --btn-gradient-end: #764ba2;
-      --btn-shadow: rgba(102, 126, 234, 0.4);
-      --payment-btn-bg: #2ecc71;
-      --payment-btn-shadow: rgba(46, 204, 113, 0.4);
-      --confirm-btn-bg: #e67e22;
-      --confirm-btn-shadow: rgba(230, 126, 34, 0.4);
-      --upi-bg: #f4f6fc;
-      --upi-border: #667eea;
-      --highlight-bg: #fff9e6;
-      --highlight-border: #ffd700;
-      --status-success-bg: #d4edda;
-      --status-success-text: #155724;
-      --status-error-bg: #f8d7da;
-      --status-error-text: #721c24;
-      --status-info-bg: #d1ecf1;
-      --status-info-text: #0c5460;
-      --order-bg: #fff3cd;
-      --order-border: #ffc107;
-      --order-text: #856404;
-      --divider-color: #d0d0dd;
-      --scrollbar-thumb: #c0c0d0;
-      --qr-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      --btn-disabled-bg: #c0c0ce;
-      --thankyou-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --thankyou-text: #fff;
-      --thankyou-card: rgba(255,255,255,0.15);
-      --thankyou-border: rgba(255,255,255,0.3);
-    }
-
-    /* apply theme variables */
-    body {
-      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
-      color: var(--text-primary);
-    }
-
-    /* ----- MAIN CONTAINER ----- */
     .container {
       position: relative;
       background: var(--card-bg);
@@ -212,7 +72,6 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 30px;
       overflow: hidden;
-      transition: background 0.25s, box-shadow 0.25s;
     }
 
     .panel {
@@ -223,24 +82,15 @@
       scrollbar-width: thin;
       padding-right: 4px;
     }
-    .panel::-webkit-scrollbar {
-      width: 5px;
-    }
-    .panel::-webkit-scrollbar-thumb {
-      background: var(--scrollbar-thumb);
-      border-radius: 10px;
-    }
+    .panel::-webkit-scrollbar { width: 5px; }
+    .panel::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 10px; }
 
     .payment-panel {
       border-left: 1px solid var(--border-light);
       padding-left: 30px;
-      transition: border-color 0.2s;
     }
-    .contact-panel {
-      padding-right: 8px;
-    }
+    .contact-panel { padding-right: 8px; }
 
-    /* ----- ORDER MESSAGE ----- */
     .order-id-display {
       position: absolute;
       bottom: 12px;
@@ -257,20 +107,13 @@
       color: var(--order-text);
       border: 2px solid var(--order-border);
       display: none;
-      transition: background 0.2s, border 0.2s, color 0.2s;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       z-index: 10;
       line-height: 1.5;
       backdrop-filter: blur(4px);
     }
-    .order-id-display strong {
-      font-weight: 800;
-    }
-    .order-id-display small {
-      font-weight: 400;
-      font-size: 0.85em;
-      opacity: 0.8;
-    }
+    .order-id-display strong { font-weight: 800; }
+    .order-id-display small { font-weight: 400; font-size: 0.85em; opacity: 0.8; }
     .order-id-display .ok-btn {
       display: inline-block;
       margin-top: 10px;
@@ -295,7 +138,6 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    /* ----- BEAUTIFUL THANK YOU OVERLAY ----- */
     .thankyou-overlay {
       position: fixed;
       top: 0;
@@ -311,9 +153,7 @@
       animation: fadeIn 0.5s ease;
       padding: 20px;
     }
-    .thankyou-overlay.active {
-      display: flex;
-    }
+    .thankyou-overlay.active { display: flex; }
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
@@ -412,23 +252,19 @@
       box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     }
 
-    /* rest of styling */
     h1 {
       color: var(--text-primary);
       text-align: center;
       margin-bottom: 10px;
       font-size: 28px;
-      transition: color 0.2s;
     }
     .subtitle {
       text-align: center;
-      color: blue;
+      color: var(--text-muted);
       margin-bottom: 30px;
       font-size: 16px;
     }
-    .form-group {
-      margin-bottom: 20px;
-    }
+    .form-group { margin-bottom: 20px; }
     label {
       display: block;
       margin-bottom: 5px;
@@ -442,19 +278,16 @@
       border: 2px solid var(--input-border);
       border-radius: 10px;
       font-size: 14px;
-      transition: border-color 0.3s, background 0.2s;
+      transition: border-color 0.3s;
       font-family: inherit;
-      background: var(--card-bg);
+      background: white;
       color: var(--text-primary);
     }
     input:focus, textarea:focus {
       outline: none;
       border-color: var(--input-focus);
     }
-    textarea {
-      height: 100px;
-      resize: vertical;
-    }
+    textarea { height: 100px; resize: vertical; }
     .submit-btn {
       width: 100%;
       padding: 14px;
@@ -465,7 +298,7 @@
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
       margin-bottom: 10px;
     }
     .submit-btn:hover:not(:disabled) {
@@ -475,8 +308,6 @@
     .submit-btn:disabled {
       background: var(--btn-disabled-bg);
       cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
     }
 
     .divider {
@@ -495,7 +326,6 @@
     .divider::before { margin-right: 15px; }
     .divider::after { margin-left: 15px; }
 
-    /* FIXED: Pay Now button is now clickable */
     .payment-btn {
       width: 100%;
       padding: 16px;
@@ -511,7 +341,7 @@
       justify-content: center;
       gap: 10px;
       margin-bottom: 10px;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .payment-btn:hover:not(:disabled) {
       transform: translateY(-2px);
@@ -520,8 +350,6 @@
     .payment-btn:disabled {
       background: var(--btn-disabled-bg);
       cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
     }
 
     .upi-id {
@@ -534,7 +362,6 @@
       color: var(--text-primary);
       margin-top: 10px;
       border: 1px dashed var(--upi-border);
-      transition: background 0.2s, border 0.2s;
       overflow-wrap: anywhere;
     }
 
@@ -548,7 +375,7 @@
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
       margin-top: 15px;
     }
     .confirm-payment-btn:hover:not(:disabled) {
@@ -558,8 +385,6 @@
     .confirm-payment-btn:disabled {
       background: var(--btn-disabled-bg);
       cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
     }
 
     .payment-info {
@@ -577,7 +402,6 @@
       text-align: center;
       font-weight: 600;
       display: none;
-      transition: background 0.2s, color 0.2s;
     }
     #status.success {
       display: block;
@@ -612,7 +436,6 @@
       margin-top: 10px;
       font-size: 13px;
       color: var(--text-secondary);
-      transition: background 0.2s, border 0.2s;
     }
 
     #qrImage {
@@ -622,56 +445,10 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: var(--qr-shadow);
-      transition: box-shadow 0.2s;
       margin: 10px auto;
       display: block;
     }
 
-    /* ----- THEME TOGGLE ----- */
-    .theme-switcher {
-      position: fixed;
-      top: 18px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(8px);
-      padding: 8px 14px;
-      border-radius: 60px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      z-index: 999;
-      border: 1px solid rgba(255,255,255,0.3);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .theme-btn {
-      border: none;
-      background: transparent;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.2s;
-      color: #1e1e2f;
-      background: rgba(255,255,255,0.5);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-      letter-spacing: 0.3px;
-    }
-    .theme-btn:hover {
-      background: rgba(255,255,255,0.9);
-      transform: scale(0.97);
-    }
-    .theme-btn.active {
-      background: #1e1e2f;
-      color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    body.theme-darkblue .theme-btn.active-darkblue { background: #1f5a8a; color: white; }
-    body.theme-light .theme-btn.active-light { background: #5a7a9a; color: white; }
-    body.theme-original .theme-btn.active-original { background: #667eea; color: white; }
-
-    /* responsive */
     @media (max-width: 600px) {
       body { padding: 12px; align-items: flex-start; }
       .container {
@@ -698,8 +475,6 @@
       .submit-btn, .payment-btn, .confirm-payment-btn { min-height: 52px; font-size: 16px; }
       #qrImage { width: min(180px, 70vw); height: min(180px, 70vw); }
       .upi-id { font-size: 16px; }
-      .theme-switcher { top: 12px; right: 12px; padding: 6px 12px; gap: 4px; }
-      .theme-btn { font-size: 12px; padding: 4px 10px; }
       .order-id-display {
         bottom: 8px;
         width: 92%;
@@ -713,23 +488,10 @@
       .thankyou-card h2 { font-size: 32px; }
       .thankyou-icon { font-size: 60px; }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
-
-    .panel { scrollbar-width: thin; }
   </style>
   <link rel="preload" as="image" href="qrimage.png">
 </head>
-<body class="theme-original">
-
-  <!-- THEME SWITCHER -->
-  <div class="theme-switcher">
-    <button class="theme-btn active-original" data-theme="original" onclick="setTheme('original')">✦ Original</button>
-    <button class="theme-btn" data-theme="darkblue" onclick="setTheme('darkblue')">🌙 Dark Blue</button>
-    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">☀️ Light</button>
-  </div>
+<body>
 
   <div class="container">
     <!-- LEFT: CONTACT -->
@@ -761,31 +523,26 @@
       
       <div class="divider">OR</div>
       
-      <!-- PAY NOW BUTTON - NOW CLICKABLE -->
       <button class="payment-btn" onclick="handlePayNow()" id="payNowBtn">
-        💳 Pay Now - ₹500
+        💳 Pay Now - ₹200
       </button>
       
-      <!-- UPI SECTION -->
       <div id="upiSection" style="display: block; margin-top: 20px;">
         <div class="upi-id">
           📱 Pay to UPI ID: <strong>8275679175@upi</strong>
         </div>
         
-        <!-- QR CODE -->
         <div style="text-align: center; margin-top: 15px;">
           <p style="font-size: 14px; color: var(--text-muted);">Scan QR or pay to above UPI ID</p>
           <img id="qrImage" src="qrimage.png" alt="UPI Payment QR Code">
         </div>
         
-        <!-- USER'S UPI ID INPUT -->
         <div class="form-group" style="margin-top: 20px;">
           <label>📱 Your UPI ID (from which you paid)</label>
           <input type="text" id="userUpiId" placeholder="e.g., yourname@okhdfcbank" style="font-family: monospace;">
           <p class="helper-text">📍 Enter the UPI ID you used to send the payment</p>
         </div>
         
-        <!-- HELP BOX -->
         <div class="highlight-box">
           <strong>💡 How to find your UPI ID:</strong><br>
           • Open Google Pay / PhonePe / BHIM<br>
@@ -794,7 +551,6 @@
           • Enter that exact ID above
         </div>
         
-        <!-- CONFIRM PAYMENT BUTTON -->
         <button class="confirm-payment-btn" onclick="handlePaymentDone()" id="paymentDoneBtn">
           ✅ I Have Paid - Confirm Now
         </button>
@@ -806,11 +562,9 @@
       </div>
     </section>
 
-    <!-- ORDER CONFIRMATION -->
     <div id="orderIdDisplay" class="order-id-display"></div>
   </div>
 
-  <!-- BEAUTIFUL THANK YOU OVERLAY -->
   <div class="thankyou-overlay" id="thankyouOverlay">
     <div class="thankyou-card">
       <span class="thankyou-icon">🎉</span>
@@ -826,28 +580,6 @@
   </div>
 
   <script>
-    // THEME SWITCHING
-    function setTheme(theme) {
-      document.body.className = 'theme-' + theme;
-      document.querySelectorAll('.theme-btn').forEach(btn => {
-        btn.classList.remove('active', 'active-darkblue', 'active-light', 'active-original');
-        if (btn.dataset.theme === theme) {
-          btn.classList.add('active', 'active-' + theme);
-        }
-      });
-      localStorage.setItem('preferredTheme', theme);
-    }
-
-    (function loadTheme() {
-      const saved = localStorage.getItem('preferredTheme');
-      if (saved && ['original','darkblue','light'].includes(saved)) {
-        setTheme(saved);
-      } else {
-        setTheme('original');
-      }
-    })();
-
-    // ----- CORE FUNCTIONALITY -----
     let formSubmitted = false;
     let formData = {};
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYTDmfJjMahenio8L4Otud-9Qy_4VBqQMKGFK5nXqmSUjtXuuOssiSMCgUSwpjAF2AQg/exec';
@@ -860,7 +592,6 @@
       setTimeout(() => { status.style.display = 'none'; }, 5000);
     }
 
-    // Submit Form
     async function submitForm() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -891,31 +622,25 @@
           })
         });
         
-        showStatus('✅ Form submitted! Thank you email sent to ' + email, 'success');
+        showStatus('✅ Form submitted!', 'success');
         btn.textContent = '✅ Submitted';
         btn.disabled = true;
-        
-        // Enable the Pay Now button after form submission
         document.getElementById('payNowBtn').disabled = false;
         
       } catch (error) {
         showStatus('❌ Error. Please try again.', 'error');
         btn.disabled = false;
         btn.textContent = '📨 Submit';
-        console.error('Error:', error);
       }
     }
 
-    // NEW: Handle Pay Now button click
     function handlePayNow() {
-      // Check if form is submitted
       if (!formData.email) {
         showStatus('⚠️ Please submit the contact form first!', 'error');
         document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
       
-      // Check if UPI ID is entered
       const userUpiId = document.getElementById('userUpiId').value.trim();
       if (!userUpiId) {
         showStatus('⚠️ Please enter your UPI ID first!', 'error');
@@ -924,39 +649,24 @@
       }
       
       if (!userUpiId.includes('@')) {
-        showStatus('⚠️ Please enter a valid UPI ID (e.g., name@okaxis)', 'error');
+        showStatus('⚠️ Please enter a valid UPI ID', 'error');
         return;
       }
       
-      // If all checks pass, scroll to the confirm button and highlight it
       document.getElementById('paymentDoneBtn').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      document.getElementById('paymentDoneBtn').style.transform = 'scale(1.05)';
-      setTimeout(() => {
-        document.getElementById('paymentDoneBtn').style.transform = 'scale(1)';
-      }, 500);
-      
       showStatus('✅ UPI ID verified! Click "I Have Paid - Confirm Now" after making the payment.', 'success');
     }
 
-    // Handle Payment Done
     async function handlePaymentDone() {
-      // Check if form is submitted
       if (!formData.email) {
         showStatus('⚠️ Please fill and submit the form first!', 'error');
-        document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
       
       const userUpiId = document.getElementById('userUpiId').value.trim();
       
-      if (!userUpiId) {
-        showStatus('⚠️ Please enter YOUR UPI ID first!', 'error');
-        document.getElementById('userUpiId').focus();
-        return;
-      }
-      
-      if (!userUpiId.includes('@')) {
-        showStatus('⚠️ Please enter a valid UPI ID (e.g., name@okaxis)', 'error');
+      if (!userUpiId || !userUpiId.includes('@')) {
+        showStatus('⚠️ Please enter a valid UPI ID', 'error');
         return;
       }
       
@@ -965,7 +675,6 @@
       paymentBtn.disabled = true;
       
       try {
-        // Send to Google Sheets
         await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
@@ -979,11 +688,9 @@
           })
         });
         
-        // Generate Order ID
         const mockOrderId = 'ORD-' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + 
                            Math.random().toString(36).substring(2, 7).toUpperCase();
         
-        // Show confirmation message at bottom
         const orderDisplay = document.getElementById('orderIdDisplay');
         orderDisplay.innerHTML = `
           🎉 Payment Submitted!<br>
@@ -1002,41 +709,29 @@
         showStatus('❌ Error. Please try again.', 'error');
         paymentBtn.disabled = false;
         paymentBtn.textContent = '✅ I Have Paid - Confirm Now';
-        console.error('Error:', error);
       }
     }
 
-    // Show Thank You overlay
     function showThankYou(orderId, upiId) {
       document.getElementById('thankyouOrderId').textContent = orderId;
       document.getElementById('thankyouUpiId').textContent = upiId;
       document.getElementById('thankyouOverlay').classList.add('active');
-      
-      // Hide the order display
       document.getElementById('orderIdDisplay').style.display = 'none';
     }
 
-    // Close Thank You
     function closeThankYou() {
       document.getElementById('thankyouOverlay').classList.remove('active');
-      // Reset the payment button
       document.getElementById('paymentDoneBtn').textContent = '✅ I Have Paid - Confirm Now';
       document.getElementById('paymentDoneBtn').disabled = false;
       document.getElementById('userUpiId').value = '';
-      // Disable Pay Now button again
       document.getElementById('payNowBtn').disabled = true;
-      // Reset form submitted flag
       formSubmitted = false;
       formData = {};
       document.getElementById('submitBtn').disabled = false;
       document.getElementById('submitBtn').textContent = '📨 Submit';
     }
 
-    // QR fallback
     document.addEventListener('DOMContentLoaded', function() {
-      const qr = document.getElementById('qrImage');
-      if (qr) qr.src = 'qrimage.png';
-      // Initially disable Pay Now button
       document.getElementById('payNowBtn').disabled = true;
     });
   </script>
