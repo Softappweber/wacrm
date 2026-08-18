@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp CRM - Low Cost, High Performance Marketing Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #25D366;
+            --primary-dark: #128C7E;
+            --dark: #0f0f1e;
+            --dark-secondary: #1a1a2e;
+            --gold: #d4af37;
+            --text-light: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: rgba(15, 15, 30, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .navbar-brand {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary) !important;
+        }
+        
+        .nav-link {
+            color: var(--text-light) !important;
+            font-size: 14px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            padding: 100px 30px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 211, 102, 0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-title .highlight {
+            color: var(--primary);
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(37, 211, 102, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .btn-hero {
+            padding: 14px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            margin-right: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary-hero {
+            background: var(--primary);
+            border: 2px solid var(--primary);
+            color: white;
+        }
+        
+        .btn-primary-hero:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            color: white;
+        }
+        
+        .btn-outline-hero {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline-hero:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Stats */
+        .stats-section {
+            padding: 60px 30px;
+            background: var(--dark-secondary);
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .stat-box:hover {
+            background: rgba(37, 211, 102, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        
+        /* Features */
+        .features-section {
+            padding: 80px 30px;
+            background: var(--dark);
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            background: rgba(37, 211, 102, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .feature-icon {
+            font-size: 35px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Why */
+        .why-section {
+            padding: 80px 30px;
+            background: var(--dark-secondary);
+        }
+        
+        .why-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .why-text h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .why-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Pricing */
+        .pricing-section {
+            padding: 80px 30px;
+            background: var(--dark);
+        }
+        
+        .pricing-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--dark);
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .plan-price {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .plan-price span {
+            font-size: 16px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .plan-features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .plan-features li i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        
+        .btn-plan {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-basic {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-basic:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-popular {
+            background: var(--gold);
+            border: 2px solid var(--gold);
+            color: var(--dark);
+        }
+        
+        .btn-popular:hover {
+            background: #c9a030;
+            border-color: #c9a030;
+            color: white;
+        }
+        
+        /* Value */
+        .value-section {
+            padding: 60px 30px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            text-align: center;
+        }
+        
+        .value-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .value-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0a0a14;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .footer-text .software-name-footer {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .footer-text .company-name-footer {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        /* Free Trial Banner */
+        .trial-banner {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .trial-banner a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 32px; }
+            .stat-number { font-size: 28px; }
+            .section-title { font-size: 28px; }
+            .plan-price { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- FREE TRIAL BANNER -->
+<div class="trial-banner">
+    🎉 <a href="free-trial.html">Start Your 5-Day Free Trial Today!</a> — No Credit Card Required
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <i class="fab fa-whatsapp"></i> WhatsApp CRM
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: rgba(255,255,255,0.3);">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="free-trial.html" style="color: #ff9800 !important; font-weight: 600;">Free Trial</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i> Low Cost, High Performance Platform
+                </div>
+                <h1 class="hero-title">
+                    Transform Your Business with <span class="highlight">WhatsApp CRM</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Manage leads, automate follow-ups, send bulk messages, and track campaigns — 
+                    all from one powerful platform. Built for Indian businesses. Priced for everyone.
+                </p>
+                <div>
+                    <a href="#pricing" class="btn btn-primary-hero btn-hero">Get Started</a>
+                    <a href="free-trial.html" class="btn btn-outline-hero btn-hero">Start Free Trial</a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <i class="fab fa-whatsapp" style="font-size: 200px; color: var(--primary); opacity: 0.3;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Powerful Features</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">₹200</div>
+                    <div class="stat-label">Starting Price/Month</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">5 Days</div>
+                    <div class="stat-label">Free Trial</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Always Available</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+    <div class="container">
+        <h2 class="section-title">Everything You Need to Succeed</h2>
+        <p class="section-subtitle">25+ features built with dedication and precision</p>
+        
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <div class="feature-name">Lead Management</div>
+                    <div class="feature-desc">Store, organize, and track unlimited leads with tags, status, and detailed profiles.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="feature-name">WhatsApp Integration</div>
+                    <div class="feature-desc">Send messages via wa.me (free) or Meta API (automated). Your choice.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div class="feature-name">Bulk Sending</div>
+                    <div class="feature-desc">Send messages to hundreds of leads with smart delay and progress tracking.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                    <div class="feature-name">Automation</div>
+                    <div class="feature-desc">Auto-responders, scheduled messages, and drip campaigns on autopilot.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-columns"></i></div>
+                    <div class="feature-name">Pipeline View</div>
+                    <div class="feature-desc">Visual Kanban board to track leads from New to Converted with drag-and-drop.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="feature-name">Analytics</div>
+                    <div class="feature-desc">Real-time dashboards, conversion tracking, and detailed reports.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <div class="feature-name">Follow-ups</div>
+                    <div class="feature-desc">Never forget a lead with scheduled follow-ups and reminders.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div class="feature-name">Campaigns</div>
+                    <div class="feature-desc">Create marketing campaigns, assign leads, and track performance.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+    <div class="container">
+        <h2 class="section-title">Why Choose WhatsApp CRM?</h2>
+        <p class="section-subtitle">Built with passion, priced with care</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="why-point">
+                    <div class="why-icon"><i class="fas fa-fire"></i></div>
+                    <div class="why-text">
+                        <h4>The Need for This Software</h4>
+                        <p>Businesses lose leads every day due to poor follow-up. Manual WhatsApp messaging is slow and error-prone. Our CRM solves this by automating the entire process — saving hours daily and increasing conversions by up to 3x.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="why-point">
+                    <div class="why-icon"><i class="fas fa-heart"></i></div>
+                    <div class="why-text">
+                        <h4>Efforts Behind This Product</h4>
+                        <p>Months of research, design, and development went into building this platform. Every feature was carefully crafted, tested, and refined to ensure it works flawlessly for Indian businesses.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="why-point">
+                    <div class="why-icon"><i class="fas fa-gem"></i></div>
+                    <div class="why-text">
+                        <h4>Low Cost, High Performance</h4>
+                        <p>Starting at just ₹200/month — less than the cost of a tea per day. Yet it delivers enterprise-grade performance that rivals tools costing 10x more.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="why-point">
+                    <div class="why-icon"><i class="fas fa-infinity"></i></div>
+                    <div class="why-text">
+                        <h4>Lifetime Value</h4>
+                        <p>Once you start using this platform, it becomes your business backbone. Use it for life — as your business grows, the platform grows with you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+    <div class="container">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">
+            No hidden fees. Cancel anytime. 
+            <a href="free-trial.html" style="color: #ff9800; font-weight: 600;">Try free for 5 days →</a>
+        </p>
+        
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="pricing-card">
+                    <h4>Basic</h4>
+                    <div class="plan-price">₹200 <span>/month</span></div>
+                    <p class="text-muted">For solo entrepreneurs</p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All 25+ features</li>
+                        <li><i class="fas fa-check"></i> wa.me manual sending</li>
+                        <li><i class="fas fa-check"></i> 500 leads storage</li>
+                        <li><i class="fas fa-check"></i> Mobile PWA app</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <a href="payment-gateway.html" class="btn-plan btn-basic">Choose Basic</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="pricing-card popular">
+                    <div class="popular-tag">MOST POPULAR</div>
+                    <h4>Standard</h4>
+                    <div class="plan-price">₹300 <span>/month</span></div>
+                    <p class="text-muted">For growing businesses</p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Everything in Basic</li>
+                        <li><i class="fas fa-check"></i> Meta API automation</li>
+                        <li><i class="fas fa-check"></i> 800 messages/month</li>
+                        <li><i class="fas fa-check"></i> Unlimited leads</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <a href="payment-gateway.html" class="btn-plan btn-popular">Choose Standard</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="pricing-card">
+                    <h4>Premium</h4>
+                    <div class="plan-price">₹600 <span>/month</span></div>
+                    <p class="text-muted">For serious businesses</p>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Everything in Standard</li>
+                        <li><i class="fas fa-check"></i> 1000+ messages/month</li>
+                        <li><i class="fas fa-check"></i> Unlimited team members</li>
+                        <li><i class="fas fa-check"></i> Advanced automation</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                    </ul>
+                    <a href="payment-gateway.html" class="btn-plan btn-basic">Choose Premium</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VALUE -->
+<section class="value-section" id="value">
+    <div class="container">
+        <h2 class="value-title">Built to Last. Priced to Impress.</h2>
+        <p class="value-text">
+            Low cost. High performance. Guaranteed results.<br>
+            Join hundreds of businesses growing with WhatsApp CRM.
+        </p>
+        <a href="free-trial.html" class="btn btn-light btn-lg">Start Free Trial</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p class="footer-text">
+        <span class="software-name-footer">WhatsApp CRM</span> | 
+        Powered by <span class="company-name-footer">SoftAppWeber</span><br>
+        © 2026 All Rights Reserved
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
